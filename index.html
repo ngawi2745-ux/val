@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Surat Cinta Abadi - Untukmu Tercinta</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Dancing+Script:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Great+Vibes&family=Parisienne&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --soft-rose: #fde2e4;
+            --dusty-rose: #e8b4b8;
+            --deep-rose: #c9184a;
+            --pale-pink: #fff0f3;
+            --cream: #fef3f2;
+            --gold: #d4af37;
+            --soft-gold: #f4e4c1;
+            --text-dark: #4a4a4a;
+            --text-soft: #6b6b6b;
+            --shadow-light: rgba(201, 24, 74, 0.08);
+            --shadow-soft: rgba(201, 24, 74, 0.15);
+            --shadow-medium: rgba(201, 24, 74, 0.25);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            background: linear-gradient(135deg, #fff0f3 0%, #fde2e4 25%, #fad2e1 50%, #e8b4b8 75%, #c9184a 100%);
+            background-size: 400% 400%;
+            animation: softGradient 25s ease infinite;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        @keyframes softGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Soft Floating Elements */
+        .soft-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .soft-petal {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: radial-gradient(circle, rgba(253, 226, 228, 0.8) 0%, rgba(232, 180, 184, 0.6) 100%);
+            border-radius: 0 100% 0 100%;
+            opacity: 0.6;
+            animation: gentleFall 20s linear infinite;
+        }
+
+        @keyframes gentleFall {
+            0% {
+                transform: translateY(-100px) rotate(0deg) scale(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.6;
+                transform: scale(1);
+            }
+            90% {
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateY(calc(100vh + 100px)) rotate(360deg) scale(0.8);
+                opacity: 0;
+            }
+        }
+
+        .soft-sparkle {
+            position: absolute;
+            width: 3px;
+            height: 3px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0) 70%);
+            border-radius: 50%;
+            animation: twinkle 4s ease-in-out infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.5);
+            }
+        }
+
+        /* Main Container */
+        .romantic-container {
+            position: relative;
+            z-index: 10;
+            width: 90%;
+            max-width: 480px;
+            height: 85vh;
+            max-height: 750px;
+            perspective: 2500px;
+        }
+
+        /* Premium Soft Envelope */
+        .soft-envelope-wrapper {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .soft-envelope {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            background: linear-gradient(145deg, #ffffff 0%, #fef3f2 50%, #fff0f3 100%);
+            border-radius: 25px;
+            box-shadow: 
+                0 40px 80px rgba(201, 24, 74, 0.15),
+                0 0 0 1px rgba(253, 226, 228, 0.8),
+                inset 0 0 40px rgba(253, 226, 228, 0.3);
+            cursor: pointer;
+            transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+            overflow: hidden;
+        }
+
+        .soft-envelope::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(253, 226, 228, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(232, 180, 184, 0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .soft-envelope:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 
+                0 50px 100px rgba(201, 24, 74, 0.2),
+                0 0 0 1px rgba(253, 226, 228, 1),
+                inset 0 0 50px rgba(253, 226, 228, 0.4);
+        }
+
+        /* Soft Envelope Flap */
+        .soft-flap {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 50%;
+            background: linear-gradient(145deg, #fef3f2 0%, #fff0f3 100%);
+            clip-path: polygon(0 0, 100% 0, 50% 100%);
+            transform-origin: top;
+            transition: transform 1.2s cubic-bezier(0.23, 1, 0.32, 1);
+            z-index: 5;
+            box-shadow: 
+                0 -10px 30px rgba(201, 24, 74, 0.1),
+                inset 0 0 20px rgba(253, 226, 228, 0.5);
+        }
+
+        .soft-flap::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, transparent 0%, rgba(212, 175, 55, 0.1) 100%);
+            clip-path: polygon(0 0, 100% 0, 50% 100%);
+        }
+
+        .soft-envelope.open .soft-flap {
+            transform: rotateX(-180deg);
+        }
+
+        /* Soft Wax Seal */
+        .soft-seal {
+            position: absolute;
+            top: 45%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90px;
+            height: 90px;
+            background: radial-gradient(circle at 30% 30%, #fad2e1 0%, #e8b4b8 40%, #c9184a 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 
+                0 15px 35px rgba(201, 24, 74, 0.3),
+                inset 0 -8px 15px rgba(0, 0, 0, 0.15),
+                inset 0 8px 15px rgba(255, 255, 255, 0.4),
+                0 0 0 3px rgba(253, 226, 228, 0.5);
+            z-index: 6;
+            transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .soft-seal::before {
+            content: '💕';
+            font-size: 40px;
+            filter: drop-shadow(0 3px 6px rgba(0, 0, 0, 0.2));
+            animation: gentlePulse 2s ease-in-out infinite;
+        }
+
+        @keyframes gentlePulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .soft-envelope.open .soft-seal {
+            transform: translate(-50%, -50%) scale(0) rotate(360deg);
+            opacity: 0;
+        }
+
+        /* Soft Letter Content */
+        .soft-letter {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.85);
+            width: 88%;
+            height: 82%;
+            background: linear-gradient(145deg, #ffffff 0%, #fef3f2 50%, #fff0f3 100%);
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: 
+                0 25px 50px rgba(201, 24, 74, 0.12),
+                inset 0 0 30px rgba(253, 226, 228, 0.2);
+            opacity: 0;
+            transition: all 1s cubic-bezier(0.23, 1, 0.32, 1);
+            overflow: hidden;
+        }
+
+        .soft-envelope.open .soft-letter {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .soft-letter::before {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: -3px;
+            right: -3px;
+            bottom: -3px;
+            background: linear-gradient(45deg, #fde2e4, #d4af37, #fde2e4);
+            border-radius: 20px;
+            opacity: 0;
+            z-index: -1;
+            transition: opacity 0.6s ease;
+            animation: softBorderRotate 4s linear infinite;
+        }
+
+        @keyframes softBorderRotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .soft-letter:hover::before {
+            opacity: 0.2;
+        }
+
+        /* Soft Letter Header */
+        .soft-header {
+            text-align: center;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .soft-header h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: 2.8em;
+            font-weight: 400;
+            color: var(--deep-rose);
+            text-shadow: 2px 2px 8px rgba(201, 24, 74, 0.1);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+            animation: gentleFloat 3s ease-in-out infinite;
+        }
+
+        @keyframes gentleFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        .soft-header h1::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--dusty-rose), transparent);
+        }
+
+        .soft-date {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1em;
+            font-style: italic;
+            color: var(--text-soft);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            opacity: 0.8;
+        }
+
+        /* Soft Letter Body */
+        .soft-body {
+            height: calc(100% - 200px);
+            overflow-y: auto;
+            padding-right: 15px;
+            position: relative;
+        }
+
+        .soft-body::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .soft-body::-webkit-scrollbar-track {
+            background: var(--soft-rose);
+            border-radius: 4px;
+        }
+
+        .soft-body::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, var(--dusty-rose), var(--deep-rose));
+            border-radius: 4px;
+        }
+
+        .soft-message {
+            background: linear-gradient(145deg, var(--pale-pink) 0%, var(--cream) 100%);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 
+                0 8px 20px var(--shadow-light),
+                inset 0 0 15px rgba(255, 255, 255, 0.6);
+            position: relative;
+            transform: translateY(30px);
+            opacity: 0;
+            animation: softSlideIn 1s forwards;
+            border: 1px solid rgba(253, 226, 228, 0.5);
+        }
+
+        @keyframes softSlideIn {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .soft-message:nth-child(2) {
+            animation-delay: 0.3s;
+        }
+
+        .soft-message:nth-child(3) {
+            animation-delay: 0.6s;
+        }
+
+        .soft-message::before {
+            content: '🌹';
+            position: absolute;
+            top: -12px;
+            left: 25px;
+            font-size: 24px;
+            filter: drop-shadow(0 2px 4px rgba(201, 24, 74, 0.2));
+        }
+
+        .soft-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.35em;
+            line-height: 1.9;
+            color: var(--text-dark);
+            text-align: justify;
+            position: relative;
+            padding: 0 20px;
+            font-style: italic;
+        }
+
+        .soft-text::before,
+        .soft-text::after {
+            font-family: 'Parisienne', cursive;
+            font-size: 2.5em;
+            color: var(--dusty-rose);
+            opacity: 0.4;
+            position: absolute;
+        }
+
+        .soft-text::before {
+            content: '❝';
+            top: -20px;
+            left: -10px;
+        }
+
+        .soft-text::after {
+            content: '❞';
+            bottom: -40px;
+            right: -10px;
+        }
+
+        /* Poetic Lines */
+        .poetic-line {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.1em;
+            color: var(--deep-rose);
+            text-align: center;
+            margin: 15px 0;
+            opacity: 0.8;
+            font-weight: 600;
+        }
+
+        /* Soft Letter Footer */
+        .soft-footer {
+            text-align: right;
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 1px solid var(--soft-rose);
+            position: relative;
+        }
+
+        .soft-signature {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.3em;
+            font-weight: 700;
+            color: var(--deep-rose);
+            text-shadow: 1px 1px 4px rgba(201, 24, 74, 0.15);
+            margin-bottom: 8px;
+            animation: signatureFade 2s ease;
+        }
+
+        @keyframes signatureFade {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .soft-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1em;
+            font-style: italic;
+            color: var(--text-soft);
+            opacity: 0.8;
+        }
+
+        /* Soft Action Buttons */
+        .soft-actions {
+            display: flex;
+            gap: 20px;
+            margin-top: 30px;
+            justify-content: center;
+        }
+
+        .soft-btn {
+            padding: 15px 40px;
+            border: none;
+            border-radius: 50px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.1em;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+            position: relative;
+            overflow: hidden;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            box-shadow: 0 8px 20px var(--shadow-light);
+        }
+
+        .soft-btn-yes {
+            background: linear-gradient(135deg, var(--dusty-rose) 0%, var(--deep-rose) 100%);
+            color: white;
+        }
+
+        .soft-btn-maybe {
+            background: linear-gradient(135deg, #ffffff 0%, var(--cream) 100%);
+            color: var(--deep-rose);
+            border: 1px solid var(--soft-rose);
+        }
+
+        .soft-btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            transition: width 0.8s, height 0.8s;
+        }
+
+        .soft-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px var(--shadow-soft);
+        }
+
+        .soft-btn:hover::before {
+            width: 400px;
+            height: 400px;
+        }
+
+        /* Soft Page 2 */
+        .soft-page2 {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #fad2e1 0%, #e8b4b8 50%, #c9184a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 1.5s ease;
+            z-index: 100;
+        }
+
+        .soft-page2.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .soft-surprise {
+            text-align: center;
+            color: white;
+            max-width: 650px;
+            padding: 50px;
+            animation: softZoomIn 1.5s ease;
+        }
+
+        @keyframes softZoomIn {
+            from {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        .soft-surprise-title {
+            font-family: 'Great Vibes', cursive;
+            font-size: 4em;
+            margin-bottom: 40px;
+            text-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            animation: titleGlow 2s ease-in-out infinite;
+        }
+
+        @keyframes titleGlow {
+            0%, 100% { text-shadow: 0 5px 20px rgba(0, 0, 0, 0.2); }
+            50% { text-shadow: 0 5px 30px rgba(255, 255, 255, 0.5); }
+        }
+
+        .soft-surprise-text {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.6em;
+            line-height: 1.9;
+            margin-bottom: 40px;
+            opacity: 0.95;
+            font-style: italic;
+        }
+
+        .soft-heart-beat {
+            font-size: 120px;
+            animation: softHeartbeat 1.5s infinite;
+            margin: 40px 0;
+            filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.2));
+        }
+
+        @keyframes softHeartbeat {
+            0%, 100% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1.2); }
+            75% { transform: scale(1.1); }
+        }
+
+        .soft-poem {
+            font-family: 'Parisienne', cursive;
+            font-size: 1.8em;
+            color: var(--soft-gold);
+            margin: 30px 0;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            line-height: 1.6;
+        }
+
+        /* Soft Music Controller */
+        .soft-music {
+            position: fixed;
+            top: 25px;
+            right: 25px;
+            width: 55px;
+            height: 55px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(254, 243, 242, 0.95) 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 
+                0 8px 20px var(--shadow-soft),
+                inset 0 0 15px rgba(253, 226, 228, 0.5);
+            z-index: 1000;
+            transition: all 0.4s ease;
+            border: 1px solid rgba(253, 226, 228, 0.8);
+        }
+
+        .soft-music:hover {
+            transform: scale(1.1) rotate(10deg);
+            box-shadow: 
+                0 12px 30px var(--shadow-medium),
+                inset 0 0 20px rgba(253, 226, 228, 0.7);
+        }
+
+        .soft-music-icon {
+            font-size: 26px;
+            animation: musicRotate 3s linear infinite;
+        }
+
+        @keyframes musicRotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .soft-music.paused .soft-music-icon {
+            animation-play-state: paused;
+        }
+
+        /* Soft Loading */
+        .soft-loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #fff0f3 0%, #fde2e4 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.8s ease;
+        }
+
+        .soft-loading.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        .soft-loading-heart {
+            font-size: 60px;
+            animation: softLoadingPulse 1.5s infinite;
+            margin-bottom: 20px;
+        }
+
+        @keyframes softLoadingPulse {
+            0%, 100% { 
+                transform: scale(1); 
+                filter: drop-shadow(0 0 10px rgba(201, 24, 74, 0.3));
+            }
+            50% { 
+                transform: scale(1.2); 
+                filter: drop-shadow(0 0 20px rgba(201, 24, 74, 0.5));
+            }
+        }
+
+        .soft-loading-text {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.5em;
+            color: var(--deep-rose);
+            font-weight: 600;
+            animation: fadeInOut 2s infinite;
+        }
+
+        @keyframes fadeInOut {
+            0%, 100% { opacity: 0.5; }
+            50% { opacity: 1; }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 480px) {
+            .romantic-container {
+                width: 95%;
+                height: 80vh;
+                max-height: 650px;
+            }
+
+            .soft-header h1 {
+                font-size: 2.2em;
+            }
+
+            .soft-text {
+                font-size: 1.15em;
+            }
+
+            .soft-signature {
+                font-size: 1.8em;
+            }
+
+            .soft-surprise-title {
+                font-size: 2.8em;
+            }
+
+            .soft-surprise-text {
+                font-size: 1.3em;
+            }
+
+            .soft-heart-beat {
+                font-size: 80px;
+            }
+
+            .soft-poem {
+                font-size: 1.4em;
+            }
+        }
+
+        @media (max-height: 700px) {
+            .romantic-container {
+                height: 75vh;
+            }
+
+            .soft-letter {
+                padding: 25px;
+            }
+
+            .soft-header h1 {
+                font-size: 2em;
+            }
+
+            .soft-text {
+                font-size: 1.05em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Soft Loading Screen -->
+    <div class="soft-loading" id="softLoading">
+        <div class="soft-loading-heart">💕</div>
+        <div class="soft-loading-text">Mempersiapkan Kejutan...</div>
+    </div>
+
+    <!-- Soft Background Elements -->
+    <div class="soft-background" id="softBackground"></div>
+
+    <!-- Soft Music Controller -->
+    <div class="soft-music paused" id="softMusic">
+        <span class="soft-music-icon" id="softMusicIcon">🎵</span>
+    </div>
+
+    <!-- Main Soft Envelope -->
+    <div class="romantic-container">
+        <div class="soft-envelope-wrapper">
+            <div class="soft-envelope" id="softEnvelope">
+                <div class="soft-flap"></div>
+                <div class="soft-seal"></div>
+                
+                <div class="soft-letter">
+                    <div class="soft-header">
+                        <h1>Untuk Amelia, Tercintaku</h1>
+                        <div class="soft-date">Hari Valentine Abadi</div>
+                    </div>
+                    
+                    <div class="soft-body">
+                        <div class="soft-message">
+                            <p class="soft-text">
+                                Amelia, dalam keheningan malam, namamu adalah doa yang kudengar. 
+                                Dalam kehangatan pagi, senyummu adalah matahari yang menyinari hariku. 
+                                Kamu bukan sekadar bagian dari hidupku, kamu adalah seluruh alasan 
+                                mengapa jantungku terus berdetak dengan penuh cinta.
+                            </p>
+                            <div class="poetic-line">
+                                "Kamu adalah puisi yang tak pernah ku lewatkan untuk baca setiap hari"
+                            </div>
+                        </div>
+                        
+                        <div class="soft-message">
+                            <p class="soft-text">
+                                Setiap detik bersamamu adalah anugerah yang tak ternilai. 
+                                Tawamu adalah melodi yang menghiasi jiwa, tatapan matamu adalah 
+                                galaksi dimana aku tersesat dengan bahagia. Terima kasih telah 
+                                menjadi pelangi di setiap hujan dalam hidupku.
+                            </p>
+                            <div class="poetic-line">
+                                "Bersamamu, aku menemukan surga yang selama ini kucari"
+                            </div>
+                        </div>
+                        
+                        <div class="soft-message">
+                            <p class="soft-text">
+                                Di Hari Valentine ini, aku bukan hanya memberikan sekuntum bunga, 
+                                tapi aku menawarkan taman bunga abadi di hatiku. Aku berjanji 
+                                akan mencintaimu di musim semi, musim panas, musim gugur, 
+                                dan musim dingin - dalam setiap napas dan detak jantungku.
+                            </p>
+                            <div class="poetic-line">
+                                "Cintaku untukmu tak memiliki musim, hanya abadi"
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="soft-footer">
+                        <div class="soft-signature">Baban</div>
+                        <div class="soft-title">Cinta Sejati Abadi</div>
+                    </div>
+                    
+                    <div class="soft-actions">
+                        <button class="soft-btn soft-btn-yes" id="softYes">Aku Mau</button>
+                        <button class="soft-btn soft-btn-maybe" id="softMaybe">Terpukau</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Soft Page 2 -->
+    <div class="soft-page2" id="softPage2">
+        <div class="soft-surprise">
+            <h2 class="soft-surprise-title">Kisah Kita Dimulai Sekarang</h2>
+            <p class="soft-surprise-text">
+                Amelia, terima kasih telah menerima cinta tulusku. 
+                Ini bukan akhir dari pencarian cinta, 
+                tapi awal dari petualangan abadi kita. 
+                Bersama, kita akan menulis babak-babak baru 
+                dalam novel cinta yang tak akan pernah berakhir.
+            </p>
+            <div class="soft-heart-beat">💕</div>
+            <div class="soft-poem">
+                "Dua jiwa yang menyatu dalam satu cinta,<br>
+                Menerangi kegelapan dengan cahaya kasih,<br>
+                Selamanya dan selamanya, Amen."
+            </div>
+            <p class="soft-surprise-text">
+                Aku akan mencintaimu lebih dari kata-kata bisa ungkapkan, 
+                lebih dari waktu bisa hitung, lebih dari bintang bisa sebut.
+            </p>
+        </div>
+    </div>
+
+    <!-- Audio Element -->
+    <audio id="softBackgroundMusic" loop>
+        <source src="Bahagia Lagi - Piche Kota  Lirik Lagu.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        // Elements
+        const softLoading = document.getElementById('softLoading');
+        const softEnvelope = document.getElementById('softEnvelope');
+        const softPage2 = document.getElementById('softPage2');
+        const softYes = document.getElementById('softYes');
+        const softMaybe = document.getElementById('softMaybe');
+        const softMusic = document.getElementById('softMusic');
+        const softMusicIcon = document.getElementById('softMusicIcon');
+        const softBackgroundMusic = document.getElementById('softBackgroundMusic');
+        const softBackground = document.getElementById('softBackground');
+        
+        let isSoftMusicPlaying = false;
+        let isSoftOpen = false;
+
+        // Initialize
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                softLoading.classList.add('hidden');
+                initSoftBackground();
+            }, 2000);
+        });
+
+        // Soft Background Elements
+        function initSoftBackground() {
+            // Soft petals
+            for (let i = 0; i < 15; i++) {
+                const petal = document.createElement('div');
+                petal.className = 'soft-petal';
+                petal.style.left = Math.random() * 100 + '%';
+                petal.style.animationDelay = Math.random() * 20 + 's';
+                petal.style.animationDuration = (Math.random() * 10 + 15) + 's';
+                softBackground.appendChild(petal);
+            }
+
+            // Soft sparkles
+            for (let i = 0; i < 25; i++) {
+                const sparkle = document.createElement('div');
+                sparkle.className = 'soft-sparkle';
+                sparkle.style.left = Math.random() * 100 + '%';
+                sparkle.style.top = Math.random() * 100 + '%';
+                sparkle.style.animationDelay = Math.random() * 4 + 's';
+                softBackground.appendChild(sparkle);
+            }
+        }
+
+        // Soft Envelope Click
+        softEnvelope.addEventListener('click', (e) => {
+            if (e.target.closest('.soft-letter') || e.target.closest('.soft-btn')) return;
+            
+            if (!isSoftOpen) {
+                softEnvelope.classList.add('open');
+                isSoftOpen = true;
+                
+                // Start soft music
+                if (!isSoftMusicPlaying) {
+                    softBackgroundMusic.play().catch(e => console.log('Autoplay prevented'));
+                    softMusic.classList.remove('paused');
+                    softMusicIcon.textContent = '🔇';
+                    isSoftMusicPlaying = true;
+                }
+                
+                // Create soft petal rain
+                createSoftPetalRain();
+            }
+        });
+
+        // Soft Music Controller
+        softMusic.addEventListener('click', () => {
+            if (isSoftMusicPlaying) {
+                softBackgroundMusic.pause();
+                softMusic.classList.add('paused');
+                softMusicIcon.textContent = '🎵';
+            } else {
+                softBackgroundMusic.play().catch(e => console.log('Play prevented'));
+                softMusic.classList.remove('paused');
+                softMusicIcon.textContent = '🔇';
+            }
+            isSoftMusicPlaying = !isSoftMusicPlaying;
+        });
+
+        // Soft Button Actions
+        softYes.addEventListener('click', () => {
+            softPage2.classList.add('active');
+            createSoftMassiveHeartRain();
+            playSoftSuccessSound();
+        });
+
+        softMaybe.addEventListener('click', () => {
+            // Create romantic animation
+            createSoftRomanticHearts();
+            softMaybe.textContent = 'Aku Jatuh Cinta ❤️';
+            setTimeout(() => {
+                softMaybe.textContent = 'Terpukau';
+            }, 3000);
+        });
+
+        // Soft Petal Rain
+        function createSoftPetalRain() {
+            for (let i = 0; i < 40; i++) {
+                setTimeout(() => {
+                    createSoftPetal();
+                }, i * 150);
+            }
+        }
+
+        function createSoftPetal() {
+            const petal = document.createElement('div');
+            petal.className = 'soft-petal';
+            petal.style.left = Math.random() * 100 + '%';
+            petal.style.animationDelay = Math.random() * 3 + 's';
+            petal.style.animationDuration = (Math.random() * 8 + 12) + 's';
+            document.body.appendChild(petal);
+            
+            setTimeout(() => petal.remove(), 20000);
+        }
+
+        // Soft Heart Rain
+        function createSoftMassiveHeartRain() {
+            const hearts = ['💕', '💖', '💗', '💝', '💞', '💓', '🌹', '✨'];
+            for (let i = 0; i < 60; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.className = 'soft-petal';
+                    heart.innerHTML = hearts[Math.floor(Math.random() * hearts.length)];
+                    heart.style.background = 'transparent';
+                    heart.style.fontSize = (Math.random() * 25 + 15) + 'px';
+                    heart.style.left = Math.random() * 100 + '%';
+                    heart.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                    softBackground.appendChild(heart);
+                    
+                    setTimeout(() => heart.remove(), 5000);
+                }, i * 80);
+            }
+        }
+
+        // Soft Romantic Hearts
+        function createSoftRomanticHearts() {
+            const container = softEnvelope.querySelector('.soft-letter');
+            const romanticHearts = ['💕', '💖', '🌹', '✨', '💝'];
+            
+            for (let i = 0; i < 15; i++) {
+                setTimeout(() => {
+                    const heart = document.createElement('div');
+                    heart.innerHTML = romanticHearts[Math.floor(Math.random() * romanticHearts.length)];
+                    heart.style.position = 'absolute';
+                    heart.style.fontSize = (Math.random() * 20 + 25) + 'px';
+                    heart.style.left = Math.random() * 100 + '%';
+                    heart.style.top = Math.random() * 100 + '%';
+                    heart.style.animation = 'gentleFloat 2s ease';
+                    heart.style.pointerEvents = 'none';
+                    heart.style.filter = 'drop-shadow(0 0 10px rgba(201, 24, 74, 0.5))';
+                    container.appendChild(heart);
+                    
+                    setTimeout(() => heart.remove(), 2000);
+                }, i * 100);
+            }
+        }
+
+        // Soft Success Sound
+        function playSoftSuccessSound() {
+            const audio = new Audio('data:audio/wav;base64,UklGRnoGAABXQVZFZm10IBAAAAABAAEAQB8AAEAfAAABAAgAZGF0YQoGAACBhYqFbF1fdJivrJBhNjVgodDbq2EcBj+a2/LDciUFLIHO8tiJNwgZaLvt559NEAxQp+PwtmMcBjiR1/LMeSwFJHfH8N2QQAoUXrTp66hVFApGn+DyvmwhBSuBzvLZiTYIG2m98OScTgwOUarm7blmFgU7k9n1unEiBC13yO/eizEIHWq+8+OWT');
+            audio.play().catch(e => console.log('Sound play prevented'));
+        }
+
+        // Prevent zoom on double tap
+        let lastTouchEnd = 0;
+        document.addEventListener('touchend', (e) => {
+            const now = Date.now();
+            if (now - lastTouchEnd <= 300) {
+                e.preventDefault();
+            }
+            lastTouchEnd = now;
+        });
+
+        // Prevent context menu
+        document.addEventListener('contextmenu', (e) => e.preventDefault());
+
+        // Add subtle parallax effect
+        document.addEventListener('mousemove', (e) => {
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            
+            const petals = document.querySelectorAll('.soft-petal');
+            petals.forEach((petal, index) => {
+                const speed = (index + 1) * 0.5;
+                petal.style.transform = `translate(${x * speed}px, ${y * speed}px)`;
+            });
+        });
+    </script>
+</body>
+</html>
